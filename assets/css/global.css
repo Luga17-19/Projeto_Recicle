@@ -39,6 +39,18 @@ li{
     border-radius: 12px;
 }
 
+#loginItem{
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+    height: 40px;
+    width: 100px;
+    background-color: var(--corFundo2);
+    padding: 10px;
+    border: #000 solid 1px;
+    border-radius: 12px;
+}
+
 section{
     border-top: #fff solid 3px ;
     background-color: var(--corFundo3);
