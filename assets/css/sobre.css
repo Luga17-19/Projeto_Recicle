@@ -1,0 +1,11 @@
+#introducao{
+    display: flex;
+    flex-flow: column;
+    margin: 15px 20px;
+
+}
+
+#home{
+    background-image: url(/assets/img/image_home.jpg);
+}
+
