@@ -1,16 +1,29 @@
 #introducao{
-    display: flex;
-    flex-flow: column;
     margin: 15px 20px;
 }
+
+#introducao h1{
+    font-size: 70px;
+    text-align: left;
+}
+ #introducao p{
+    font-size: larger;
+ }
+
+
+
+
+
+
+
+
 
 #sobre{
     width: 100%;
     padding: 10px 10px 15px 10px; 
-
 }
 
-#sobre h1{
+/* #sobre h1{
     font-size: var(--fonteTitulo);
     margin-bottom: 100px;
     background-color: green;
@@ -21,6 +34,6 @@
     border-radius: 15px;
     flex-direction: column; 
     
-}
+} */
 
 
