@@ -49,11 +49,22 @@ li{
     margin-right: 12px;
     height: 40px;
     width: 100px;
-    background-color: #3817cd;
+    background-color: #c54047;
     padding: 10px;
     border: #000 solid 2px;
     border-radius: 12px;
+    transition: all 0.5s;
 }
+
+#loginItem:hover{
+    background-color: #1f11e6f5;
+}
+
+#loginItem a:hover{
+    color: #fafafa;
+    
+}
+
 
 section{
     border-top: #000 solid 3px ;
