@@ -33,7 +33,7 @@
     margin-bottom: 10px;
 }
 
-h1 {
+#tituloCatalogo {
     display: flex;
     justify-content: center;
     margin: 10px 0;
