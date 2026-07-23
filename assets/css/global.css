@@ -12,7 +12,7 @@
     --corFundo2: #6FF26F;
     --corFundo3: #CFBB23;
     --corTextoPrincipal:#91281c;
-    --corTextoParagrafo: #504D35;
+    --corTextoParagrafo: #121107;
 }
 
 header{
@@ -66,3 +66,9 @@ img{
     width: 100%;
 }
 
+h1{
+    color: var(--corTextoPrincipal);
+}
+p{
+    color: var(--corTextoParagrafo);
+}
