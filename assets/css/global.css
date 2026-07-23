@@ -5,6 +5,7 @@
     list-style: none;
     text-decoration: none;
     color: #000;
+    scroll-behavior: smooth;
 }
 
 :root{
@@ -20,11 +21,16 @@ header{
     /* position:fixed; */
     width: 100%;
     background-color: var(--corFundo1);
-    padding: 12px;
+    padding: 25px;
     display: flex;
     justify-content: space-between;
     /* margin-bottom: 100px; */
 }
+
+#navBarConteiner{
+    position: fixed;
+}
+
 
 ul{
     display: flex;
