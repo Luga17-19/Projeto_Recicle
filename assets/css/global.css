@@ -41,13 +41,14 @@ li{
 
 #loginItem{
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-right: 12px;
     height: 40px;
     width: 100px;
-    background-color: var(--corFundo2);
+    background-color: #3817cd;
     padding: 10px;
-    border: #000 solid 1px;
+    border: #000 solid 2px;
     border-radius: 12px;
 }
 
