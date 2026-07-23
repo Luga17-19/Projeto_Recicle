@@ -1,8 +1,10 @@
 #objetivoConteiner{
     display: flex;
-
+    flex-flow: wrap;
+    padding: 20px;
 }
-
 .obj{
     background-color: var(--corFundo2);
+    padding: 20px;
+    border-radius: 20px;
 }
