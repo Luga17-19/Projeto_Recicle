@@ -16,11 +16,13 @@
 }
 
 header{
+    position:fixed;
     width: 100%;
     background-color: var(--corFundo1);
     padding: 12px;
     display: flex;
     justify-content: space-between;
+    /* margin-bottom: 100px; */
 }
 
 ul{
@@ -63,3 +65,4 @@ img{
     background-size: cover;
     width: 100%;
 }
+
