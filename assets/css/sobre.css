@@ -10,14 +10,13 @@
 
 #sobre{
     width: 100%;
-    padding-bottom: 150px;
-    padding: 100px 100px 150px 100px; 
+    padding: 10px 10px 15px 10px; 
 
 }
 
 #sobre h1{
     font-size: var(--fonteTitulo);
-    margin-bottom: 100%;
+    margin-bottom: 100px;
     background-color: green;
     text-align: center;
     display: flex;
