@@ -1,0 +1,8 @@
+#objetivoConteiner{
+    display: flex;
+
+}
+
+.obj{
+    background-color: var(--corFundo2);
+}
