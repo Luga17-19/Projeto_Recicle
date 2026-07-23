@@ -9,3 +9,13 @@
     background-image: url(/assets/img/image_home.jpg);
 }
 
+#sobre{
+    width: 100%;
+    padding-bottom: 150px;
+    padding: 100px 100px 0px 100px; /* topo direita base esquerda */
+    text-align: center;
+
+}
+#habilidades h1{
+    font-size: var(--fonteTitulo);
+}
