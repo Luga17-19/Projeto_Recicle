@@ -17,8 +17,10 @@
 
 #home h1{
     font-size: 90px;
+    
 }
 
 #home p{
     margin: 10px 50px ;
+    color: var(--corTextoBranco);
 }
