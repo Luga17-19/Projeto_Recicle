@@ -10,6 +10,7 @@
     /* flex-direction: row-reverse; */
     background-color: var(--corFundo2);
     padding: 20px;
+    gap: 20px;
     /* border-radius: 20px; */
 
 }
@@ -20,4 +21,10 @@
     padding: 20px;
     border-radius: 20px;
 
+}
+
+.odsImg{
+    width: 20%;
+    height: auto;
+    border-radius: 20px;
 }
