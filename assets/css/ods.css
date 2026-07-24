@@ -1,0 +1,23 @@
+.odsConteiner{
+    display: flex;
+    flex-flow: wrap;
+    margin-bottom: 20px;
+    gap: 12px;
+}
+
+.ods{
+    display: flex;
+    /* flex-direction: row-reverse; */
+    background-color: var(--corFundo2);
+    padding: 20px;
+    /* border-radius: 20px; */
+
+}
+.reverse{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: var(--corFundo2);
+    padding: 20px;
+    border-radius: 20px;
+
+}

@@ -1,4 +1,4 @@
-#introducao{
+#sobreConteiner{
     margin: 15px 20px;
     display: flex;
     align-items: center;
@@ -6,60 +6,13 @@
     /* justify-content: space-between; */
 }
 
-#introducao h1{
+#sobreConteiner h1{
     font-size: 150px;
     text-align: left;
     width: 50%;  
 }
 
-#introducao p{
+#sobreConteiner p{
     font-size: 35px;
     width: 50%;
 }
-
-/* ============================================================================= */
-
-#sobreConteiner{
-    width: 100%;
-    /* padding: 10px 10px 15px 10px;  */
-}
-
-/* ================================================================================== */
-.odsConteiner{
-    display: flex;
-    flex-flow: wrap;
-    margin-bottom: 20px;
-    gap: 12px;
-}
-
-.ods{
-    display: flex;
-    /* flex-direction: row-reverse; */
-    background-color: var(--corFundo2);
-    padding: 20px;
-    /* border-radius: 20px; */
-
-}
-.reverse{
-    display: flex;
-    flex-direction: row-reverse;
-    background-color: var(--corFundo2);
-    padding: 20px;
-    border-radius: 20px;
-
-}
-
-/* #sobre h1{
-    font-size: var(--fonteTitulo);
-    margin-bottom: 100px;
-    background-color: green;
-    text-align: center;
-    display: flex;
-    flex-direction: column;   
-    border: 2px solid black;
-    border-radius: 15px;
-    flex-direction: column; 
-    
-} */
-
-
