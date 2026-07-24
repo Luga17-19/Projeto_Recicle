@@ -8,6 +8,7 @@
     width: 200px;
     height: 150px;
     margin-bottom: 10px;
+    border-radius: 15px;
 }
 
 .produtoConteiner{
@@ -23,7 +24,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;    
-    background-color: var(--corFundo2);
+    background-color: #DDD9CE;
     border: 2px solid #010101;
     border-radius: 13px;
 }
@@ -37,4 +38,5 @@
     display: flex;
     justify-content: center;
     margin: 10px 0;
+    color: #010101;
 }
