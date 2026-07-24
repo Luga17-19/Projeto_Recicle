@@ -23,6 +23,30 @@
     padding: 10px 10px 15px 10px; 
 }
 
+.odsConteiner{
+    display: flex;
+    flex-flow: wrap;
+    padding: 20px;
+    gap: 12px;
+}
+
+.ods{
+    display: flex;
+    /* flex-direction: row-reverse; */
+    background-color: var(--corFundo2);
+    padding: 20px;
+    border-radius: 20px;
+
+}
+.reverse{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: var(--corFundo2);
+    padding: 20px;
+    border-radius: 20px;
+
+}
+
 /* #sobre h1{
     font-size: var(--fonteTitulo);
     margin-bottom: 100px;

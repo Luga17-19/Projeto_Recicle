@@ -4,6 +4,8 @@
     padding: 20px;
 }
 .obj{
+    display: flex;
+    /* flex-direction: row-reverse; */
     background-color: var(--corFundo2);
     padding: 20px;
     border-radius: 20px;
