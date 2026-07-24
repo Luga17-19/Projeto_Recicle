@@ -21,7 +21,7 @@
 
 #sobreConteiner{
     width: 100%;
-    padding: 10px 10px 15px 10px; 
+    /* padding: 10px 10px 15px 10px;  */
 }
 
 /* ================================================================================== */
@@ -37,7 +37,7 @@
     /* flex-direction: row-reverse; */
     background-color: var(--corFundo2);
     padding: 20px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
 
 }
 .reverse{
