@@ -9,11 +9,11 @@
 }
 
 :root{
-    --corFundo1: #088C09;
-    --corFundo2: #6FF26F;
-    --corFundo3: #CFBB23;
-    --corTextoPrincipal:#91281c;
-    --corTextoParagrafo: #121107;
+    --corFundo1: #AEA897;
+    --corFundo2: #6F5F48;
+    --corFundo3: #716C59;
+    --corTextoPrincipal:#FAF8F2;
+    --corTextoParagrafo: #0B0B09;
     --corTextoBranco: #fafafa;
 }
 
@@ -46,6 +46,11 @@ li{
     padding: 10px;
     /* border: #000 solid 1px; */
     border-radius: 12px;
+    transition: all 0.5s;
+}
+
+li:hover{
+    background-color: var(--corTextoBranco);
 }
 
 #loginItem{
