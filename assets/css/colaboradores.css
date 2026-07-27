@@ -1,9 +1,55 @@
-.colaborador{
-    background-color: aquamarine;
-    padding: 50px;
-    margin: 15px 15px;
+
+
+#colaboradoresConteiner{
+    display: flex;
+    flex-flow: row wrap;
+    margin: 15px 0px;
+    justify-content: center;
 }
 
-.colaboradoresConteiner{
-    width: 48%;
+.colaborador{
+    width: 40%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: ce ;
+    padding: 30px;
+    margin: 15px 15px;
+    border-radius: 30px;
+    background-color: rgb(119, 170, 153);
+}
+
+
+.fotoPerfil{
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 100px;
+}
+
+.informacoesCartao{
+    margin-bottom: px;
+    font-size: 20px;
+    /* background-color: brown; */
+}
+
+.redesSociais{
+    /* background-color: aquamarine; */
+    padding: 12px;
+    margin-top: 3px;
+}
+
+.redesSociais a{
+    
+    margin-right: 13px;
+    background-color: rgb(168, 255, 127);
+    font-size: 20px;
+    padding: 5%;
+    border-radius: 100px;
+}
+
+.fa-instagram{
+    /* color: aqua; */
 }
