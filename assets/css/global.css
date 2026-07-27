@@ -82,6 +82,10 @@ section{
     background-color: var(--corFundo3);
 }
 
+.paralax{
+    background-image: url(/assets/img/Fundadores\ \(1\).png);
+}
+
 img{
     background-attachment: fixed;
     background: no-repeat;
