@@ -10,12 +10,7 @@
     margin-bottom: 10px;
     border-radius: 15px;
     object-fit: cover;
-    transition: all 1s; 
-}
-
-#catalogoPrincipal img:hover{
-
-    transform:scale(1.1);
+    transition: all 1s ease; 
 }
 
 
@@ -35,8 +30,12 @@
     background-color: #DDD9CE;
     border: 2px solid #010101;
     border-radius: 13px;
+    transition: all 1s ;
 }
+.produto:hover{
+    transform:scale(1.1);
 
+}
 .produto h3{
     margin-bottom: 20px;
 }
