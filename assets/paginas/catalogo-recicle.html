@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo</title>
+    <link rel="stylesheet" href="/main.css">
+    <style>
+        /* ===== Variáveis do site (já usadas no restante do projeto) ===== */
+        :root{
+            --corFundo1: #F8FAFC;
+            --corFundo2: #15803D;
+            --corTextoPrincipal: #1F2937;
+            --corTextoTitulo: #14532D;
+            --corTextoBranco: #fafafa;
+            --navBar: #166534;
+            --navBarItens: #FFFFFF;
+            --navBarItensHover: #BBF7D0;
+            --botaoLogin: #22C55E;
+            --botaoLoginHover: #16A34A;
+
+            --cartaoFundo: #FFFFFF;
+            --cartaoBorda: #E5E7EB;
+            --sombraSuave: 0 6px 16px rgba(15, 23, 42, 0.08);
+            --sombraForte: 0 20px 40px rgba(20, 83, 45, 0.22);
+        }
+
+        body{
+            background: var(--corFundo1);
+        }
+
+        /* ===== Título ===== */
+        #tituloCatalogo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px 0 8px;
+            color: var(--corTextoTitulo);
+        }
+
+        #tituloCatalogo::before{
+            content: "Reciclado com propósito";
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--corTextoTitulo);
+            margin-bottom: 6px;
+        }
+
+        #tituloCatalogo{
+            font-size: 2.4rem;
+            font-weight: 800;
+        }
+
+        /* ===== Catálogo ===== */
+        #catalogoPrincipal{
+            display: flex;
+            justify-content: center;
+            padding: 30px 20px 90px;
+        }
+
+        .catalogoConteiner{
+            width: 100%;
+            max-width: 1280px;
+        }
+
+        .produtoConteiner{
+            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 28px;
+            width: 100%;
+        }
+
+        /* ===== Card de produto ===== */
+        .produto{
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            height: 320px;
+            border-radius: 18px;
+            overflow: hidden;
+            background-color: var(--cartaoFundo);
+            box-shadow: var(--sombraSuave);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .produto:hover{
+            transform: translateY(-8px);
+            box-shadow: var(--sombraForte);
+        }
+
+        .produto img{
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .produto:hover img{
+            transform: scale(1.08);
+        }
+
+        /* véu de gradiente para o título ficar legível sobre a foto */
+        .produto::after{
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(20, 83, 45, 0.88) 0%,
+                rgba(20, 83, 45, 0.35) 40%,
+                rgba(20, 83, 45, 0) 70%
+            );
+            transition: background 0.4s ease;
+        }
+
+        .produto:hover::after{
+            background: linear-gradient(
+                to top,
+                rgba(20, 83, 45, 0.95) 0%,
+                rgba(20, 83, 45, 0.5) 45%,
+                rgba(20, 83, 45, 0) 75%
+            );
+        }
+
+        .produto h3{
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 0;
+            color: var(--corTextoBranco);
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.6);
+        }
+
+        /* foco visível para acessibilidade */
+        .produto:focus-within{
+            outline: 3px solid var(--botaoLogin);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 480px){
+            #tituloCatalogo{
+                font-size: 1.9rem;
+                margin: 34px 0 6px;
+            }
+            .produto{
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="" alt="" id="logo">
+        <nav>
+            <div class="navBarConteiner">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#objetivo">Objetivo</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li id="loginItem"><a href="#login">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+</header>
+    <main>
+        <section id="secaoLateral">
+            <div>
+
+            </div>
+
+        </section>
+
+        <h1 id="tituloCatalogo">Nossos Produtos</h1>
+
+        <section id="catalogoPrincipal">
+            <div class="catalogoConteiner">
+
+                <div class="produtoConteiner">
+
+                    <div class="produto">
+                        <img src="/assets/img/bolsaPlastica.jpg" alt="Bolsa de plástico transparente com maçãs">
+                        <h3>Bolsa</h3>
+                    </div>
+
+                    <div class="produto">
+                        <img src="/assets/img/ecoBag.png" alt="EcoBag">
+                        <h3>EcoBag</h3>
+                    </div>
+
+                    <div class="produto">
+                        <img src="/assets/img/sacolaMolde2.png" alt="Sacola">
+                        <h3>Sacola</h3>
+                    </div>
+
+                    <div class="produto">
+                        <img src="/assets/img/filamento.png" alt="Filamento 3D">
+                        <h3>Filamento 3D</h3>
+                    </div>
+
+                    <div class="produto">
+                        <img src="/assets/img/cacosDeVidro.png" alt="Cullets">
+                        <h3>Cullets</h3>
+                    </div>
+
+                    <div class="produto">
+                        <img src="/assets/img/fibraDeVidro.png" alt="Fibra de Vidro">
+                        <h3>Fibra de Vidro</h3>
+                    </div>
+
+                    <div class="produto">
+                        <img src="/assets/img/cadernoRec.png" alt="Caderno Reciclável">
+                        <h3>Caderno Recicláveis</h3>
+                    </div>
+
+                    <div class="produto">
+                        <img src="/assets/img/barrasDeAluminio.png" alt="Barras de Alumínio">
+                        <h3>Barras de Alumínio</h3>
+                    </div>
+
+                    <div class="produto">
+                        <img src="/assets/img/blusaREC.jpeg" alt="Roupas PET">
+                        <h3>Roupas PET</h3>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+</body>
+
+<footer>
+        <p>Recicle @ 2026 &copy; Todos os direitos reservados.</p>
+
+</footer>
+</html>
