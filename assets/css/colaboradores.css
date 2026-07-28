@@ -99,8 +99,8 @@
     padding: 40px 20px;
     background: no-repeat center center / cover fixed;
     background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)),
-        url(/assets/img/Fundadores.png);
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)),
+    url(/assets/img/Fundadores.png);
 }
 
 /* O título sobre a imagem escura do parallax precisa ser branco */
