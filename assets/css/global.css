@@ -9,12 +9,17 @@
 }
 
 :root{
-    --corFundo1: #AEA897;
-    --corFundo2: #6F5F48;
-    --corFundo3: #716C59;
-    --corTextoPrincipal:#FAF8F2;
-    --corTextoParagrafo: #0B0B09;
+    --corFundo1: #F8FAFC;
+    --corFundo2: #15803D;
+    /* --corFundo3: #716C59; */
+    --corTextoPrincipal:#1F2937;
+    --corTextoTitulo: #14532D;
     --corTextoBranco: #fafafa;
+    --navBar: #166534;
+    --navBarItens: #FFFFFF;
+    --navBarItensHover:#BBF7D0;
+    --botaoLogin: #22C55E;
+    --botaoLoginHover: #16A34A;
 }
 
 header{
@@ -60,7 +65,7 @@ li:hover{
     margin-right: 12px;
     height: 40px;
     width: 100px;
-    background-color: #c54047;
+    background-color: #388E3C;
     padding: 10px;
     /* border: #000 solid 2px; */
     border-radius: 12px;

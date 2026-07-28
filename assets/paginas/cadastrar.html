@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criar conta</title>
+<style>
+ 
+  :root{
+    --ink:#14171f;
+    --panel:#1b1f2a;
+    --line:rgba(255,255,255,0.09);
+    --text:#eef0f4;
+    --muted:#9198a8;
+    --accent:#7fb2a3;
+    --accent-soft:rgba(127,178,163,0.14);
+    --error:#e08a7d;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,body{
+    height:100%;
+    margin:0;
+  }
+
+  body{
+    font-family:'Inter', sans-serif;
+    background:
+      radial-gradient(circle at 18% 15%, rgba(127,178,163,0.10), transparent 45%),
+      var(--ink);
+    color:var(--text);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+
+  .card{
+    width:100%;
+    max-width:460px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:40px 34px 34px;
+    box-shadow:0 30px 60px -25px rgba(0,0,0,0.6);
+    position:relative;
+    overflow:hidden;
+  }
+
+  .card::before{
+    content:"";
+    position:absolute;
+    top:-40%;
+    right:-30%;
+    width:220px;
+    height:220px;
+    background:radial-gradient(circle, var(--accent-soft), transparent 70%);
+    pointer-events:none;
+  }
+
+  .mark{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    background:linear-gradient(135deg, var(--accent), #4f7e70);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:22px;
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-style:italic;
+    font-size:19px;
+    color:#0f1512;
+  }
+
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:27px;
+    line-height:1.2;
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+  }
+
+  .sub{
+    color:var(--muted);
+    font-size:14px;
+    margin:0 0 28px;
+  }
+
+  form{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+
+  .field{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+  }
+
+  .row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+
+  label{
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+  }
+
+  input, select{
+    background:#12151d;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:12px 14px;
+    font-size:15px;
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    outline:none;
+    transition:border-color .15s ease, background .15s ease;
+    width:100%;
+  }
+
+  input::placeholder{ color:#565d6e; }
+
+  input:focus, select:focus{
+    border-color:var(--accent);
+    background:#141822;
+  }
+
+  input:focus-visible, select:focus-visible{
+    box-shadow:0 0 0 3px var(--accent-soft);
+  }
+
+  select{
+    appearance:none;
+    -webkit-appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%239198a8' stroke-width='2'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat:no-repeat;
+    background-position:right 12px center;
+    padding-right:36px;
+  }
+
+  .account-type{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .account-type label{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    text-transform:none;
+    letter-spacing:normal;
+    font-size:14.5px;
+    font-weight:500;
+    color:var(--text);
+    background:#12151d;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:12px;
+    cursor:pointer;
+    transition:border-color .15s ease, background .15s ease;
+  }
+
+  .account-type input[type="radio"]{
+    accent-color:var(--accent);
+    width:15px;
+    height:15px;
+  }
+
+  .account-type input[type="radio"]:checked + span,
+  .account-type label:has(input:checked){
+    border-color:var(--accent);
+    background:var(--accent-soft);
+  }
+
+  .hint{
+    font-size:12px;
+    color:#6b7280;
+    margin-top:-2px;
+  }
+
+  .error-msg{
+    display:none;
+    font-size:13px;
+    color:var(--error);
+    background:rgba(224,138,125,0.1);
+    border:1px solid rgba(224,138,125,0.25);
+    border-radius:8px;
+    padding:9px 12px;
+  }
+
+  .error-msg.show{ display:block; }
+
+  button{
+    margin-top:6px;
+    background:var(--accent);
+    color:#0f1512;
+    border:none;
+    border-radius:10px;
+    padding:13px;
+    font-size:15px;
+    font-weight:600;
+    font-family:'Inter', sans-serif;
+    cursor:pointer;
+    transition:filter .15s ease, transform .05s ease;
+  }
+
+  button:hover{ filter:brightness(1.08); }
+  button:active{ transform:translateY(1px); }
+
+  .foot{
+    text-align:center;
+    font-size:13.5px;
+    color:var(--muted);
+    margin-top:22px;
+  }
+
+  a.link{
+    color:var(--accent);
+    text-decoration:none;
+    font-weight:500;
+  }
+
+  a.link:hover{ text-decoration:underline; }
+
+  @media (max-width:480px){
+    .row{ grid-template-columns:1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="mark">C</div>
+    <h1>Criar conta</h1>
+    <p class="sub">Preencha seus dados para começar a usar a plataforma.</p>
+
+    <form id="cadastroForm" novalidate>
+      <div class="error-msg" id="errorMsg"></div>
+
+      <div class="row">
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+        </div>
+        <div class="field">
+          <label for="sobrenome">Sobrenome</label>
+          <input type="text" id="sobrenome" name="sobrenome" placeholder="Seu sobrenome" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="idade">Idade</label>
+          <input type="number" id="idade" name="idade" placeholder="0" min="1" max="120" required>
+        </div>
+        <div class="field">
+          <label for="nascimento">Data de nascimento</label>
+          <input type="date" id="nascimento" name="nascimento" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14" required>
+      </div>
+
+      <div class="field">
+        <label>Você vai usar a plataforma como</label>
+        <div class="account-type">
+          <label>
+            <input type="radio" name="tipoConta" value="comprador" checked>
+            <span>Comprador</span>
+          </label>
+          <label>
+            <input type="radio" name="tipoConta" value="vendedor">
+            <span>Vendedor</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">E-mail para cadastro</label>
+        <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" placeholder="••••••••" required minlength="6">
+        </div>
+        <div class="field">
+          <label for="confirmarSenha">Confirmar senha</label>
+          <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="••••••••" required minlength="6">
+        </div>
+      </div>
+      <p class="hint">A senha deve ter pelo menos 6 caracteres.</p>
+
+      <button type="submit">Criar conta</button>
+    </form>
+
+    <p class="foot">Já tem uma conta? <a href="login.html" class="link">Entrar</a></p>
+  </div>
+
+<script>
+  const form = document.getElementById('cadastroForm');
+  const errorMsg = document.getElementById('errorMsg');
+  const cpfInput = document.getElementById('cpf');
+
+  // Máscara simples de CPF: 000.000.000-00
+  cpfInput.addEventListener('input', function(){
+    let v = cpfInput.value.replace(/\D/g, '').slice(0, 11);
+    v = v.replace(/(\d{3})(\d)/, '$1.$2');
+    v = v.replace(/(\d{3})(\d)/, '$1.$2');
+    v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    cpfInput.value = v;
+  });
+
+  function showError(text){
+    errorMsg.textContent = text;
+    errorMsg.classList.add('show');
+  }
+
+  function clearError(){
+    errorMsg.classList.remove('show');
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    clearError();
+
+    const nome = document.getElementById('nome').value.trim();
+    const sobrenome = document.getElementById('sobrenome').value.trim();
+    const idade = parseInt(document.getElementById('idade').value, 10);
+    const nascimento = document.getElementById('nascimento').value;
+    const cpf = cpfInput.value.trim();
+    const email = document.getElementById('email').value.trim();
+    const senha = document.getElementById('senha').value;
+    const confirmarSenha = document.getElementById('confirmarSenha').value;
+
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const cpfOk = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpf);
+
+    if(!nome || !sobrenome){
+      showError('Preencha nome e sobrenome.');
+      return;
+    }
+    if(!idade || idade < 1 || idade > 120){
+      showError('Informe uma idade válida.');
+      return;
+    }
+    if(!nascimento){
+      showError('Informe a data de nascimento.');
+      return;
+    }
+    if(!cpfOk){
+      showError('Informe um CPF válido no formato 000.000.000-00.');
+      return;
+    }
+    if(!emailOk){
+      showError('Informe um e-mail válido.');
+      return;
+    }
+    if(senha.length < 6){
+      showError('A senha deve ter pelo menos 6 caracteres.');
+      return;
+    }
+    if(senha !== confirmarSenha){
+      showError('As senhas não coincidem.');
+      return;
+    }
+
+    // Aqui entraria a chamada para o backend real de cadastro.
+    alert('Cadastro enviado! (conecte este formulário ao seu backend)');
+  });
+</script>
+
+</body>
+</html>
