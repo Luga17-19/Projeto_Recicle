@@ -5,31 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Criar conta</title>
 <style>
- 
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap');
+
   :root{
-    --ink:#14171f;
-    --panel:#1b1f2a;
-    --line:rgba(255,255,255,0.09);
-    --text:#eef0f4;
-    --muted:#9198a8;
-    --accent:#7fb2a3;
-    --accent-soft:rgba(127,178,163,0.14);
-    --error:#e08a7d;
+    --corFundo1: #F8FAFC;
+    --corFundo2: #15803D;
+    --corTextoPrincipal: #1F2937;
+    --corTextoTitulo: #14532D;
+    --corTextoBranco: #fafafa;
+    --navBar: #166534;
+    --navBarItens: #FFFFFF;
+    --navBarItensHover: #BBF7D0;
+    --botaoLogin: #22C55E;
+    --botaoLoginHover: #16A34A;
+
+    --panel:#FFFFFF;
+    --line:#E2E8F0;
+    --muted:#6B7280;
+    --accent-soft:#DCFCE7;
+    --error:#DC2626;
+    --error-soft:#FEE2E2;
   }
 
-  *{ box-sizing:border-box;}
+  *{ box-sizing:border-box; }
 
   html,body{
-    /* height:100%; */
+    height:100%;
     margin:0;
   }
 
   body{
     font-family:'Inter', sans-serif;
     background:
-      radial-gradient(circle at 18% 15%, rgba(127,178,163,0.10), transparent 45%),
-      var(--ink);
-    color:var(--text);
+      radial-gradient(circle at 18% 15%, var(--accent-soft), transparent 45%),
+      var(--corFundo1);
+    color:var(--corTextoPrincipal);
     display:flex;
     align-items:center;
     justify-content:center;
@@ -43,7 +53,7 @@
     border:1px solid var(--line);
     border-radius:18px;
     padding:40px 34px 34px;
-    box-shadow:0 30px 60px -25px rgba(0,0,0,0.6);
+    box-shadow:0 30px 60px -25px rgba(21,128,61,0.18);
     position:relative;
     overflow:hidden;
   }
@@ -63,7 +73,7 @@
     width:38px;
     height:38px;
     border-radius:10px;
-    background:linear-gradient(135deg, var(--accent), #4f7e70);
+    background:linear-gradient(135deg, var(--corFundo2), var(--navBar));
     display:flex;
     align-items:center;
     justify-content:center;
@@ -72,7 +82,7 @@
     font-weight:700;
     font-style:italic;
     font-size:19px;
-    color:#0f1512;
+    color:var(--corTextoBranco);
   }
 
   h1{
@@ -82,6 +92,7 @@
     line-height:1.2;
     margin:0 0 6px;
     letter-spacing:-0.01em;
+    color:var(--corTextoTitulo);
   }
 
   .sub{
@@ -117,23 +128,23 @@
   }
 
   input, select{
-    background:#12151d;
+    background:var(--corFundo1);
     border:1px solid var(--line);
     border-radius:10px;
     padding:12px 14px;
     font-size:15px;
-    color:var(--text);
+    color:var(--corTextoPrincipal);
     font-family:'Inter', sans-serif;
     outline:none;
     transition:border-color .15s ease, background .15s ease;
     width:100%;
   }
 
-  input::placeholder{ color:#565d6e; }
+  input::placeholder{ color:#9CA3AF; }
 
   input:focus, select:focus{
-    border-color:var(--accent);
-    background:#141822;
+    border-color:var(--botaoLogin);
+    background:#FFFFFF;
   }
 
   input:focus-visible, select:focus-visible{
@@ -143,7 +154,7 @@
   select{
     appearance:none;
     -webkit-appearance:none;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%239198a8' stroke-width='2'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'><polyline points='6 9 12 15 18 9'></polyline></svg>");
     background-repeat:no-repeat;
     background-position:right 12px center;
     padding-right:36px;
@@ -164,8 +175,8 @@
     letter-spacing:normal;
     font-size:14.5px;
     font-weight:500;
-    color:var(--text);
-    background:#12151d;
+    color:var(--corTextoPrincipal);
+    background:var(--corFundo1);
     border:1px solid var(--line);
     border-radius:10px;
     padding:12px;
@@ -174,20 +185,19 @@
   }
 
   .account-type input[type="radio"]{
-    accent-color:var(--accent);
+    accent-color:var(--botaoLogin);
     width:15px;
     height:15px;
   }
 
-  .account-type input[type="radio"]:checked + span,
   .account-type label:has(input:checked){
-    border-color:var(--accent);
+    border-color:var(--botaoLogin);
     background:var(--accent-soft);
   }
 
   .hint{
     font-size:12px;
-    color:#6b7280;
+    color:#9CA3AF;
     margin-top:-2px;
   }
 
@@ -195,8 +205,8 @@
     display:none;
     font-size:13px;
     color:var(--error);
-    background:rgba(224,138,125,0.1);
-    border:1px solid rgba(224,138,125,0.25);
+    background:var(--error-soft);
+    border:1px solid #FCA5A5;
     border-radius:8px;
     padding:9px 12px;
   }
@@ -205,8 +215,8 @@
 
   button{
     margin-top:6px;
-    background:var(--accent);
-    color:#0f1512;
+    background:var(--botaoLogin);
+    color:var(--corTextoBranco);
     border:none;
     border-radius:10px;
     padding:13px;
@@ -214,10 +224,10 @@
     font-weight:600;
     font-family:'Inter', sans-serif;
     cursor:pointer;
-    transition:filter .15s ease, transform .05s ease;
+    transition:background .15s ease, transform .05s ease;
   }
 
-  button:hover{ filter:brightness(1.08); }
+  button:hover{ background:var(--botaoLoginHover); }
   button:active{ transform:translateY(1px); }
 
   .foot{
@@ -228,12 +238,12 @@
   }
 
   a.link{
-    color:var(--accent);
+    color:var(--navBar);
     text-decoration:none;
     font-weight:500;
   }
 
-  a.link:hover{ text-decoration:underline; }
+  a.link:hover{ color:var(--botaoLoginHover); text-decoration:underline; }
 
   @media (max-width:480px){
     .row{ grid-template-columns:1fr; }
@@ -242,60 +252,6 @@
   @media (prefers-reduced-motion: reduce){
     *{ transition:none !important; }
   }
-
-  /* ============================
-   RESPONSIVIDADE
-============================ */
-
-img{
-    max-width:100%;
-    height:auto;
-    display:block;
-}
-
-section{
-    padding:70px 8%;
-}
-
-#sobreConteiner,
-#dadosConteiner,
-#colaboradoresConteiner{
-    width:100%;
-}
-
-#colaboradoresConteiner{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-}
-
-.colaborador{
-    width:320px;
-    max-width:100%;
-}
-
-#dadosConteiner{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-}
-
-.cardDado{
-    width:320px;
-    max-width:100%;
-}
-
-.contatosConteiner{
-    width:100%;
-}
-
-nav ul{
-    display:flex;
-    gap:25px;
-    list-style:none;
-}
 </style>
 </head>
 <body>
