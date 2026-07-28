@@ -1,53 +1,276 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="/main.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrar</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --corFundo1: #F8FAFC;
+    --corFundo2: #15803D;
+    --corTextoPrincipal: #1F2937;
+    --corTextoTitulo: #14532D;
+    --corTextoBranco: #fafafa;
+    --navBar: #166534;
+    --navBarItens: #FFFFFF;
+    --navBarItensHover: #BBF7D0;
+    --botaoLogin: #22C55E;
+    --botaoLoginHover: #16A34A;
+
+    --panel:#FFFFFF;
+    --line:#E2E8F0;
+    --muted:#6B7280;
+    --accent-soft:#DCFCE7;
+    --error:#DC2626;
+    --error-soft:#FEE2E2;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,body{
+    height:100%;
+    margin:0;
+  }
+
+  body{
+    font-family:'Inter', sans-serif;
+    background:
+      radial-gradient(circle at 18% 15%, var(--accent-soft), transparent 45%),
+      var(--corFundo1);
+    color:var(--corTextoPrincipal);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+
+  .card{
+    width:100%;
+    max-width:380px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:40px 34px 34px;
+    box-shadow:0 30px 60px -25px rgba(21,128,61,0.18);
+    position:relative;
+    overflow:hidden;
+  }
+
+  .card::before{
+    content:"";
+    position:absolute;
+    top:-40%;
+    right:-30%;
+    width:220px;
+    height:220px;
+    background:radial-gradient(circle, var(--accent-soft), transparent 70%);
+    pointer-events:none;
+  }
+
+  .mark{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    background:linear-gradient(135deg, var(--corFundo2), var(--navBar));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:22px;
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-style:italic;
+    font-size:19px;
+    color:var(--corTextoBranco);
+  }
+
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:27px;
+    line-height:1.2;
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+    color:var(--corTextoTitulo);
+  }
+
+  .sub{
+    color:var(--muted);
+    font-size:14px;
+    margin:0 0 30px;
+  }
+
+  form{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+
+  .field{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+  }
+
+  label{
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+  }
+
+  input{
+    background:var(--corFundo1);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:12px 14px;
+    font-size:15px;
+    color:var(--corTextoPrincipal);
+    font-family:'Inter', sans-serif;
+    outline:none;
+    transition:border-color .15s ease, background .15s ease;
+  }
+
+  input::placeholder{ color:#9CA3AF; }
+
+  input:focus{
+    border-color:var(--botaoLogin);
+    background:#FFFFFF;
+  }
+
+  input:focus-visible{
+    box-shadow:0 0 0 3px var(--accent-soft);
+  }
+
+  .row-between{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:13px;
+    margin-top:-2px;
+  }
+
+  .remember{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    color:var(--muted);
+  }
+
+  .remember input[type="checkbox"]{
+    width:14px;
+    height:14px;
+    accent-color:var(--botaoLogin);
+    background:none;
+    padding:0;
+  }
+
+  a.link{
+    color:var(--navBar);
+    text-decoration:none;
+    font-weight:500;
+  }
+
+  a.link:hover{ color:var(--botaoLoginHover); text-decoration:underline; }
+
+  .error-msg{
+    display:none;
+    font-size:13px;
+    color:var(--error);
+    background:var(--error-soft);
+    border:1px solid #FCA5A5;
+    border-radius:8px;
+    padding:9px 12px;
+  }
+
+  .error-msg.show{ display:block; }
+
+  button{
+    margin-top:6px;
+    background:var(--botaoLogin);
+    color:var(--corTextoBranco);
+    border:none;
+    border-radius:10px;
+    padding:13px;
+    font-size:15px;
+    font-weight:600;
+    font-family:'Inter', sans-serif;
+    cursor:pointer;
+    transition:background .15s ease, transform .05s ease;
+  }
+
+  button:hover{ background:var(--botaoLoginHover); }
+  button:active{ transform:translateY(1px); }
+
+  .foot{
+    text-align:center;
+    font-size:13.5px;
+    color:var(--muted);
+    margin-top:24px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; }
+  }
+</style>
 </head>
-<header>
-    <img src="" alt="" id="logo">
-        <nav>
-            <div class="navBarConteiner">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#objetivo">Objetivo</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <li id="loginItem"><a href="#login">Login</a></li>
-                </ul>
-            </div>
-        </nav>
-</header>
+<body>
 
-<form action="#" method="get">
-<body id="bodyLogin">
-    <div class="caixa">
+  <div class="card">
+    <div class="mark">C</div>
+    <h1>Bem-vindo de volta</h1>
+    <p class="sub">Entre com seu e-mail e senha para continuar.</p>
 
-        <div class="informacoesCartao">
-            <div>
-                <label for="email" >Digite aqui o seu E-mail</label>
-                <input type="email" name="email" id="email" placeholder="@gmail.com">
+    <form id="loginForm" novalidate>
+      <div class="error-msg" id="errorMsg">Verifique o e-mail e a senha informados.</div>
 
-                <label for="senha" >Digite aqui a a sua senha</label>
-                <input type="password" name="senha" id="senha">
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required>
+      </div>
 
-                <input type="submit" value="Entrar">    
-            </div>
+      <div class="field">
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" required minlength="6">
+      </div>
 
+      <div class="row-between">
+        <label class="remember">
+          <input type="checkbox" id="remember" name="remember">
+          Lembrar de mim
+        </label>
+        <a href="#" class="link">Esqueceu a senha?</a>
+      </div>
 
+      <button type="submit">Entrar</button>
+    </form>
 
-        </div>
+    <p class="foot">Não tem uma conta? <a href="cadastro.html" class="link">Cadastre-se</a></p>
+  </div>
 
-        <div class="cadastrar">
-            <h1>Ainda não tem uma conta?</h1>
-            <a href="">Clique aqui</a>
-        </div>
+<script>
+  const form = document.getElementById('loginForm');
+  const errorMsg = document.getElementById('errorMsg');
 
-    </div>
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
 
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if(!emailOk || password.length < 6){
+      errorMsg.classList.add('show');
+      return;
+    }
+
+    errorMsg.classList.remove('show');
+    // Aqui entraria a chamada para o backend/autenticação real.
+    alert('Login enviado! (conecte este formulário ao seu backend)');
+  });
+</script>
 
 </body>
-</form>
 </html>
