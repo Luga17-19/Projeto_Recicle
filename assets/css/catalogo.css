@@ -10,7 +10,14 @@
     margin-bottom: 10px;
     border-radius: 15px;
     object-fit: cover;
+    transition: all 1s; 
 }
+
+#catalogoPrincipal img:hover{
+
+    transform:scale(1.1);
+}
+
 
 .produtoConteiner{
     padding: 10px;
