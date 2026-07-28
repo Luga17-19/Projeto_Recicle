@@ -1,4 +1,4 @@
-
+/* 
 
 #colaboradoresConteiner{
     display: flex;
@@ -18,7 +18,7 @@
     padding: 30px;
     margin: 15px 15px;
     border-radius: 30px;
-    background-color: rgb(119, 170, 153);
+    background-color: var(--corFundo1);
 }
 
 
@@ -32,11 +32,11 @@
 .informacoesCartao{
     margin-bottom: px;
     font-size: 20px;
-    /* background-color: brown; */
+   
 }
 
 .redesSociais{
-    /* background-color: aquamarine; */
+  
     padding: 12px;
     margin-top: 3px;
 }
@@ -44,14 +44,15 @@
 .redesSociais a{
     
     margin-right: 13px;
-    background-color: rgb(168, 255, 127);
+    background-color: var(--navBarItensHover);
+    border: 1px solid #d1d5db;
     font-size: 20px;
     padding: 5%;
     border-radius: 100px;
 }
 
 .fa-instagram{
-    /* color: aqua; */
+    color: var(--corTextoTitulo)
 }
 
 .paralax1{
@@ -71,5 +72,142 @@
 }
 
 .paralax1 h1{
-    text-shadow: 7px 6px 9px rgba(0,0,0,0.88);
+    color: var(--corTextoTitulo);
+} */
+
+:root {
+    --corFundo1: #F8FAFC;
+    --corFundo2: #15803D;
+    --corTextoPrincipal: #1F2937;
+    --corTextoTitulo: #14532D;
+    --corTextoBranco: #fafafa;
+    --navBar: #166534;
+    --navBarItens: #FFFFFF;
+    --navBarItensHover: #BBF7D0;
+    --botaoLogin: #22C55E;
+    --botaoLoginHover: #16A34A;
+}
+
+/* --- SEÇÃO PARALLAX / FUNDADORES --- */
+.paralax1 {
+    width: 100%;
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: no-repeat center center / cover fixed;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)),
+        url(/assets/img/Fundadores.png);
+}
+
+/* O título sobre a imagem escura do parallax precisa ser branco */
+.paralax1 > h1 {
+    color: var(--corTextoBranco);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#colaboradores {
+    width: 100%;
+    max-width: 1200px;
+}
+
+#colaboradoresConteiner {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- ESTILO DO CARD DO COLABORADOR --- */
+.colaborador {
+    width: 450px;
+    max-width: 90%;
+    min-height: 180px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 24px;
+    border-radius: 24px;
+    /* Usando o fundo claro com leve transparência para um acabamento elegante */
+    background-color: rgba(248, 250, 252, 0.95); /* var(--corFundo1) com transparência */
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.colaborador:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.fotoPerfil {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 50%;
+    border: 3px solid var(--navBarItensHover);
+    flex-shrink: 0;
+}
+
+.informacoesCartao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.informacoesCartao h1 {
+    color: var(--corTextoPrincipal);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+}
+
+.informacoesCartao p {
+    color: var(--corTextoTitulo);
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0 12px 0;
+}
+
+/* --- REDES SOCIAIS --- */
+.redesSociais {
+    display: flex;
+    gap: 12px;
+}
+
+.redesSociais a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--navBarItensHover);
+    border: 1px solid rgba(22, 101, 52, 0.2);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.redesSociais a i {
+    font-size: 1.1rem;
+    color: var(--corTextoTitulo);
+    transition: color 0.2s ease;
+}
+
+.redesSociais a:hover {
+    background-color: var(--botaoLogin);
+    transform: scale(1.1);
+}
+
+.redesSociais a:hover i {
+    color: var(--corTextoBranco);
 }
