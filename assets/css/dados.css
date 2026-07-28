@@ -10,3 +10,51 @@
     padding: 20px;
     border-radius: 20px;
 }
+#dados{
+    padding: 80px 10%;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+#dados h1{
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #2e7d32;
+}
+
+#dadosConteiner{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.cardDado{
+    width: 280px;
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    transition: .3s;
+}
+
+.cardDado:hover{
+    transform: translateY(-10px);
+}
+
+.cardDado img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.cardDado h2{
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+.cardDado p{
+    line-height: 1.6;
+    text-align: justify;
+}
