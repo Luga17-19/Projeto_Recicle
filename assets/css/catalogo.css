@@ -6,9 +6,10 @@
 
 #catalogoPrincipal img{
     width: 300px;
-    height: 320px;
+    height:350px;
     margin-bottom: 10px;
     border-radius: 15px;
+    object-fit: cover;
 }
 
 .produtoConteiner{
@@ -29,10 +30,14 @@
     border-radius: 13px;
 }
 
-.produto p{
-    width: 50%;
-    margin-bottom: 10px;
+.produto h3{
+    margin-bottom: 20px;
 }
+
+/* .produto p{
+    width: 50%;
+    margin-bottom: px;
+} */
 
 #tituloCatalogo {
     display: flex;
