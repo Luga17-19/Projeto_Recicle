@@ -19,6 +19,7 @@
     font-size: 90px;
     color: #ffffff ;
     align-items: center;
+    font-family: "Cabin", sans-serif;
     
 }
 
@@ -27,6 +28,7 @@
     margin: 10px 50px ;
     font-size: 30px;
     color: var(--corTextoBranco);
+    font-family: "Molengo", sans-serif;
 }
 
 #home h1, 
